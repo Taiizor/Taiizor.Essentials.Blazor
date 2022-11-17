@@ -55,7 +55,7 @@ Bu proje [tüm katkıda bulunanların](https://github.com/all-contributors/all-c
 
 ## Kullanım
 
-Adım 1：Referans olarak Taiizor.Essentials.Blazor'yi ekleyin veya NuGet üzerinden Taiizor.Essentials.Blazor'yi aratın;
+Adım 1：Referans olarak Taiizor.Essentials.Blazor'u ekleyin veya NuGet üzerinden Taiizor.Essentials.Blazor'yi aratın;
 
 ```Install-Package Taiizor.Essentials.Blazor```
 
