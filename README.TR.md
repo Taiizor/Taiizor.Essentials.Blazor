@@ -9,12 +9,12 @@
 
 [![Discord-Server](https://img.shields.io/discord/932386235538878534?label=Discord)](https://discord.gg/nxG977byXb)
 
-# Welcome to Taiizor.Essentials.Blazor
-Taiizor.Essentials.Blazor is a essentials library for projects using .NET Blazor. It provides convenience with various functions it offers.
+# Taiizor.Essentials.Blazor'ye Hoşgeldiniz
+Taiizor.Essentials.Blazor, .NET Blazor kullanan projeler için temel bir kitaplıktır. Sunduğu çeşitli fonksiyonlarla kolaylık sağlar.
 
-## Contributors
+## Katkıda Bulunanlar
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Bu harika insanlara teşekkürler ([emoji anahtarı](https://allcontributors.org/docs/en/emoji-key)):
 
 <table>
   <tr>
@@ -27,15 +27,15 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 			</sub>
 		</a>
 		<br/>
-		<a href="https://github.com/Taiizor/Taiizor.Essentials.Blazor/commits?author=Taiizor" title="Code">💻</a>
-		<a href="https://www.taiizor.com" title="Ideas & Planning, Feedback">🤔</a>
+		<a href="https://github.com/Taiizor/Taiizor.Essentials.Blazor/commits?author=Taiizor" title="Kodlama">💻</a>
+		<a href="https://www.taiizor.com" title="Fikirler & Planlama, Geri Bildirim">🤔</a>
 	</td>
   </tr>
 </table>
 
-This project follows the [all contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+Bu proje [tüm katkıda bulunanların](https://github.com/all-contributors/all-contributors) özelliklerini takip ediyor. Her türlü katkıda hoş geldiniz!
 
-## Backers
+## Destekleyenler
 
 <table>
   <tr>
@@ -48,15 +48,15 @@ This project follows the [all contributors](https://github.com/all-contributors/
 			</sub>
 		</a>
 		<br/>
-		<a href="https://github.com/Soferity" target="_blank" title="Content">🖋</a>
+		<a href="https://github.com/Soferity" target="_blank" title="İçerik">🖋</a>
 	</td>
   </tr>
 </table>
 
-## Usage
+## Kullanım
 
-Step 1：Add a reference to Taiizor.Essentials.Blazor or search for Taiizor.Essentials.Blazor on the NuGet;
+Adım 1：Referans olarak Taiizor.Essentials.Blazor'yi ekleyin veya NuGet üzerinden Taiizor.Essentials.Blazor'yi aratın;
 
 ```Install-Package Taiizor.Essentials.Blazor```
 
-Step 2：Enjoy encoding
+Adım 2：Kodlamanın tadını çıkarın
