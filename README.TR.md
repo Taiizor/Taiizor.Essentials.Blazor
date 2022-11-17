@@ -9,7 +9,7 @@
 
 [![Discord-Server](https://img.shields.io/discord/932386235538878534?label=Discord)](https://discord.gg/nxG977byXb)
 
-# Taiizor.Essentials.Blazor'ye Hoşgeldiniz
+# Taiizor.Essentials.Blazor'a Hoşgeldiniz
 Taiizor.Essentials.Blazor, .NET Blazor kullanan projeler için temel bir kitaplıktır. Sunduğu çeşitli fonksiyonlarla kolaylık sağlar.
 
 ## Katkıda Bulunanlar
