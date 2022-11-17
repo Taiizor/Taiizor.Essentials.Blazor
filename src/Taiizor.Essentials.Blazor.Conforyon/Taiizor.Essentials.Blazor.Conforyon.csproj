@@ -1,0 +1,100 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net5.0;net6.0;net7.0</TargetFrameworks>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <AnalysisLevel>preview</AnalysisLevel>
+        <LangVersion>preview</LangVersion>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>Taiizor.Essentials.Blazor.Conforyon</PackageId>
+        <Summary>Essentials library for projects using .NET Blazor Conforyon</Summary>
+        <Authors>Taiizor</Authors>
+        <Owners>$(Authors)</Owners>
+        <Company>$(Authors)</Company>
+        <NeutralLanguage>en-GB</NeutralLanguage>
+        <Product>Taiizor.Essentials.Blazor.Conforyon ($(TargetFramework))</Product>
+        <Copyright>Copyright © $([System.DateTime]::Today.ToString(yyyy)) $(Authors)</Copyright>
+        <PackageDescription>$(Description)</PackageDescription>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageLicenseExpression></PackageLicenseExpression>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageProjectUrl>https://github.com/Taiizor/Taiizor.Essentials.Blazor</PackageProjectUrl>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>git://github.com/Taiizor/Taiizor.Essentials.Blazor</RepositoryUrl>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <!--<DocumentationFile>..\$(PackageId)\bin$(OutputPath)\$(Configuration)\$(TargetFramework)\$(PackageId).xml</DocumentationFile>-->
+        <DefineConstants>$(DefineConstants);</DefineConstants>
+        <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
+        <Title>Taiizor.Essentials.Blazor.Conforyon</Title>
+        <Description>$(Summary)
+.NET Blazor Conforyon Essentials Library - $(PackageId)
+        </Description>
+        <PackageReleaseNotes>Code improvements have been made.
+Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Blazor/releases
+        </PackageReleaseNotes>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+        <PackageIcon>Taiizor.Essentials.Blazor.Conforyon.png</PackageIcon>
+        <ApplicationIcon>Resources\Taiizor.Essentials.Blazor.Conforyon.ico</ApplicationIcon>
+        <Product>$(AssemblyName) ($(TargetFramework))</Product>
+        <FileVersion>$(Version)</FileVersion>
+        <AssemblyVersion>$(Version)</AssemblyVersion>
+        <AssemblyFileVersion>$(Version)</AssemblyFileVersion>
+        <Version>$([System.DateTime]::Today.ToString(yy)).$([System.DateTime]::Today.ToString(MM)).$([System.DateTime]::Today.ToString(dd)).$([System.DateTime]::Now.ToString(HH))$([System.DateTime]::Now.ToString(mm))</Version>
+        <VersionPrefix></VersionPrefix>
+        <VersionSuffix></VersionSuffix>
+        <PackageVersion>$(VersionPrefix)$(Version)$(VersionSuffix)</PackageVersion>
+        <PackageTags>Taiizor Soferity Vegalya Essentials Blazor Conforyon Class Library C# CSharp VBC VB VisualBasic DotNET .NET NET</PackageTags>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <Configurations>Debug;Release</Configurations>
+        <NoWarn>1587,1591</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="Resources\Taiizor.Essentials.Blazor.Conforyon.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
+    
+    <ItemGroup>
+        <None Include="..\..\LICENSE">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Properties\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.SourceLink.GitHub">
+            <Version>1.1.1</Version>
+            <PrivateAssets>All</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Conforyon" Version="2.0.0.3" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
+        <PackageReference Include="Microsoft.JSInterop" Version="5.0.17" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+        <PackageReference Include="Microsoft.JSInterop" Version="6.0.11" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
+        <PackageReference Include="Microsoft.JSInterop" Version="7.0.0" />
+    </ItemGroup>
+
+</Project>
