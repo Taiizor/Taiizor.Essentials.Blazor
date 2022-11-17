@@ -1,6 +1,6 @@
 ![Logo](.images/Logo.png)
 
-![Dot-Net-Version](https://img.shields.io/badge/.NET-7.0-blue)
+![Dot-Net-Version](https://img.shields.io/badge/.NET-%3E%3D5.0-blue)
 ![C-Sharp-Version](https://img.shields.io/badge/C%23-Preview-blue.svg)
 ![IDE-Version](https://img.shields.io/badge/IDE-VS2022-blue.svg)
 [![NuGet-Version](https://img.shields.io/nuget/v/Taiizor.Essentials.Blazor.svg)](https://www.nuget.org/packages/Taiizor.Essentials.Blazor)
