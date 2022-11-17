@@ -3,7 +3,7 @@ using Taiizor.Essentials.Blazor.Value;
 
 namespace Taiizor.Essentials.Blazor.Helper
 {
-    public class Culture
+    internal class Culture
     {
         public static CultureInfo ConvertCulture(string Culture, bool Override = false)
         {
