@@ -19,7 +19,7 @@
         {
             await Interop.Call("Taiizor.Class.Set", Identify, Class);
         }
-        
+
         public static async ValueTask<string> Get(string Identify)
         {
             return await Interop.CallString("Taiizor.Class.Get", Identify);
