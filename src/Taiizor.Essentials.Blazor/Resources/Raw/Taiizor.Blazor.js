@@ -491,9 +491,9 @@ Taiizor.Title.Get = function () {
 Taiizor.Title.Check = function () {
     let titleValue = Taiizor.Title.Get();
     if (titleValue == null || titleValue == '') {
-        return true;
+        return false;
     }
     else {
-        return false;
+        return true;
     }
 }
