@@ -19,6 +19,16 @@
         {
             await Interop.Call("Taiizor.Class.Set", Identify, Class);
         }
+        
+        public static async ValueTask<string> Get(string Identify)
+        {
+            return await Interop.CallString("Taiizor.Class.Get", Identify);
+        }
+
+        public static async ValueTask<string[]> List(string Identify)
+        {
+            return await Interop.CallStringArray("Taiizor.Class.List", Identify);
+        }
 
         public static async Task Toggle(string Identify, string Class)
         {
@@ -31,6 +41,21 @@
             {
                 await Toggle(Identify, Class);
             }
+        }
+
+        public static async ValueTask<bool> Check(string Identify, string Class)
+        {
+            return await Interop.CallBool("Taiizor.Class.Check", Identify, Class);
+        }
+
+        public static async ValueTask<bool> Check(string Identify, string Class, string Value)
+        {
+            if (await Check(Identify, Class) && await Get(Identify) == Value)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public static async Task Remove(string Identify, string Class)

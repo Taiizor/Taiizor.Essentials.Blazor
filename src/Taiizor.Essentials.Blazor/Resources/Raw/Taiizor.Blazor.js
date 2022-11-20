@@ -142,22 +142,54 @@ Taiizor.Attribute.Set = function (elementId, propertyName, propertyValue) {
     document.getElementById(elementId).setAttribute(propertyName, propertyValue);
 }
 
+Taiizor.Attribute.Get = function (elementId, propertyName) {
+    return document.getElementById(elementId).getAttribute(propertyName);
+}
+
+Taiizor.Attribute.Check = function (elementId, propertyName) {
+    let propertyValue = Taiizor.Attribute.Get(elementId, propertyName);
+    //if (propertyValue == null || propertyValue == '') {
+    if (propertyValue == null) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 Taiizor.Attribute.Remove = function (elementId, propertyName) {
     document.getElementById(elementId).removeAttribute(propertyName);
 }
 
 
 
-Taiizor.Class.Set = function (classId, className) {
-    document.getElementById(classId).className = className;
-}
-
 Taiizor.Class.Add = function (classId, className) {
     document.getElementById(classId).classList.add(className);
 }
 
+Taiizor.Class.Set = function (classId, className) {
+    document.getElementById(classId).className = className;
+}
+
+Taiizor.Class.Get = function (classId) {
+    return document.getElementById(classId).className;
+}
+
+Taiizor.Class.List = function (classId) {
+    let classList = document.getElementById(classId).classList;
+    let classArray = [];
+    for (let i = 0; i < classList.length; i++) {
+        classArray.push(classList[i]);
+    }
+    
+    return classArray;
+}
+
 Taiizor.Class.Toggle = function (classId, className) {
     document.getElementById(classId).classList.toggle(className);
+}
+
+Taiizor.Class.Check = function (classId, className) {
+    return document.getElementById(classId).classList.contains(className);
 }
 
 Taiizor.Class.Remove = function (classId, className) {

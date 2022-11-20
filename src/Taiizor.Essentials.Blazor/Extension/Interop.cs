@@ -68,5 +68,40 @@ namespace Taiizor.Essentials.Blazor.Extension
         {
             return await JS.InvokeAsync<object>(Function, Arguments);
         }
+
+        public static async ValueTask<bool[]> CallBoolArray(string Function, params object?[]? Arguments)
+        {
+            return await JS.InvokeAsync<bool[]>(Function, Arguments);
+        }
+
+        public static async ValueTask<byte[]> CallByteArray(string Function, params object?[]? Arguments)
+        {
+            return await JS.InvokeAsync<byte[]>(Function, Arguments);
+        }
+
+        public static async ValueTask<char[]> CallCharArray(string Function, params object?[]? Arguments)
+        {
+            return await JS.InvokeAsync<char[]>(Function, Arguments);
+        }
+
+        public static async ValueTask<long[]> CallLongArray(string Function, params object?[]? Arguments)
+        {
+            return await JS.InvokeAsync<long[]>(Function, Arguments);
+        }
+
+        public static async ValueTask<int[]> CallIntegerArray(string Function, params object?[]? Arguments)
+        {
+            return await JS.InvokeAsync<int[]>(Function, Arguments);
+        }
+
+        public static async ValueTask<string[]> CallStringArray(string Function, params object?[]? Arguments)
+        {
+            return await JS.InvokeAsync<string[]>(Function, Arguments);
+        }
+
+        public static async ValueTask<object[]> CallObjectArray(string Function, params object?[]? Arguments)
+        {
+            return await JS.InvokeAsync<object[]>(Function, Arguments);
+        }
     }
 }

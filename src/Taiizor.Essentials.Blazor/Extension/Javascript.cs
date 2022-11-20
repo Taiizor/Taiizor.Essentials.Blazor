@@ -13,11 +13,16 @@ namespace Taiizor.Essentials.Blazor.Extension
 
         public static string FileScript(JavascriptEnum Javascript)
         {
+            return TextScript(File(Javascript));
+        }
+
+        private static string TextScript(string Text)
+        {
             StringBuilder stringBuilder = new();
 
             stringBuilder.AppendLine("<script type=\"text/javascript\">");
 
-            stringBuilder.AppendLine(HJ.LoadFile(Javascript));
+            stringBuilder.AppendLine(Text);
 
             stringBuilder.AppendLine("</script>");
 
