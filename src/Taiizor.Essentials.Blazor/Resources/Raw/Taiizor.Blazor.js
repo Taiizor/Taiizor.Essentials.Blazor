@@ -312,6 +312,104 @@ Taiizor.Meta.ContentType.Remove = function (execute = false) {
     }
 }
 
+Taiizor.Meta.Description.Set = function (content) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Description)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Description).content = content;
+    } else {
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Enum.Description + '" content="' + content + '">');
+    }
+}
+
+Taiizor.Meta.Description.Remove = function (execute = false) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Description) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Description).remove();
+    }
+}
+
+Taiizor.Meta.Keywords.Set = function (content) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Keywords)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Keywords).content = content;
+    } else {
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Enum.Keywords + '" content="' + content + '">');
+    }
+}
+
+Taiizor.Meta.Keywords.Remove = function (execute = false) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Keywords) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Keywords).remove();
+    }
+}
+
+Taiizor.Meta.Manifest.Set = function (path) {
+    if (Taiizor.Meta.Check.Link(Taiizor.Meta.Enum.Manifest)) {
+        Taiizor.Meta.Selector.Link(Taiizor.Meta.Enum.Manifest).href = path;
+    } else {
+        Taiizor.Add.Head('<link rel="' + Taiizor.Meta.Enum.Manifest + '" href="' + path + '">');
+    }
+}
+
+Taiizor.Meta.Manifest.Remove = function (execute = false) {
+    if (Taiizor.Meta.Check.Link(Taiizor.Meta.Enum.Manifest) || execute) {
+        Taiizor.Meta.Selector.Link(Taiizor.Meta.Enum.Manifest).remove();
+    }
+}
+
+Taiizor.Meta.Refresh.Set = function (content) {
+    if (Taiizor.Meta.Check.Equiv(Taiizor.Meta.Enum.Refresh)) {
+        Taiizor.Meta.Selector.Equiv(Taiizor.Meta.Enum.Refresh).content = content;
+    } else {
+        Taiizor.Add.Head('<meta http-equiv="' + Taiizor.Meta.Enum.Refresh + '" content="' + content + '">');
+    }
+}
+
+Taiizor.Meta.Refresh.Remove = function (execute = false) {
+    if (Taiizor.Meta.Check.Equiv(Taiizor.Meta.Enum.Refresh) || execute) {
+        Taiizor.Meta.Selector.Equiv(Taiizor.Meta.Enum.Refresh).remove();
+    }
+}
+
+Taiizor.Meta.Robots.Set = function (content) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Robots)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Robots).content = content;
+    } else {
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Enum.Robots + '" content="' + content + '">');
+    }
+}
+
+Taiizor.Meta.Robots.Remove = function (execute = false) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Robots) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Robots).remove();
+    }
+}
+
+Taiizor.Meta.ShortcutIcon.Set = function (path) {
+    if (Taiizor.Meta.Check.Link(Taiizor.Meta.Enum.ShortcutIcon)) {
+        Taiizor.Meta.Selector.Link(Taiizor.Meta.Enum.ShortcutIcon).href = path;
+    } else {
+        Taiizor.Add.Head('<link rel="' + Taiizor.Meta.Enum.ShortcutIcon + '" href="' + path + '">');
+    }
+}
+
+Taiizor.Meta.ShortcutIcon.Remove = function (execute = false) {
+    if (Taiizor.Meta.Check.Link(Taiizor.Meta.Enum.ShortcutIcon) || execute) {
+        Taiizor.Meta.Selector.Link(Taiizor.Meta.Enum.ShortcutIcon).remove();
+    }
+}
+
+Taiizor.Meta.Viewport.Set = function (content) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Viewport)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Viewport).content = content;
+    } else {
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Enum.Viewport + '" content="' + content + '">');
+    }
+}
+
+Taiizor.Meta.Viewport.Remove = function (execute = false) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Viewport) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Viewport).remove();
+    }
+}
+
 
 //charset, vs attribute haltýya kontrol edilecek
 //https://ahrefs.com/blog/seo-meta-tags

@@ -14,5 +14,25 @@ namespace Taiizor.Essentials.Blazor.Extension.Meta
         {
             return await Interop.CallString("Taiizor.Meta.Content.Equiv", Internal.MetaNames[MetaEnum.ContentType]);
         }
+
+        public static async ValueTask<bool> Check()
+        {
+            return await Interop.CallBool("Taiizor.Meta.Check.Equiv", Internal.MetaNames[MetaEnum.ContentType]);
+        }
+
+        public static async ValueTask<bool> Check(string Content)
+        {
+            if (await Check() && await Get() == Content)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static async Task Remove(bool Execute = false)
+        {
+            await Interop.Call("Taiizor.Meta.ContentType.Remove", Execute);
+        }
     }
 }
