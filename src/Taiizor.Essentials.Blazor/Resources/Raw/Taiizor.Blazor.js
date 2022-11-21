@@ -165,6 +165,11 @@ Taiizor.Meta.Author.Remove = function (execute = false) {
 }
 
 
+//
+//https://ahrefs.com/blog/seo-meta-tags/
+//https://www.w3schools.com/tags/tag_meta.asp
+
+
 
 Taiizor.Add.Head = function (tagHtml) {
     document.head.appendChild(document.createRange().createContextualFragment(tagHtml));
