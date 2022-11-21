@@ -4,6 +4,23 @@ console.log('%cTaiizor Blazor Javascript has started.', 'color: #DC143C');
 var Taiizor = {};
 
 
+Taiizor.Meta = {};
+Taiizor.Meta.Author = {};
+Taiizor.Meta.Robots = {};
+Taiizor.Meta.Charset = {};
+Taiizor.Meta.Refresh = {};
+Taiizor.Meta.Twitter = {};
+Taiizor.Meta.Favicon = {};
+Taiizor.Meta.Keywords = {};
+Taiizor.Meta.Viewport = {};
+Taiizor.Meta.Manifest = {};
+Taiizor.Meta.Canonical = {};
+Taiizor.Meta.OpenGraph = {};
+Taiizor.Meta.Description = {};
+Taiizor.Meta.ContentType = {};
+Taiizor.Meta.ShortcutIcon = {};
+
+
 Taiizor.Storage = {};
 Taiizor.Storage.Local = {};
 Taiizor.Storage.Session = {};
@@ -107,6 +124,44 @@ Taiizor.Storage.Local.Check = function (localKey) {
 Taiizor.Storage.Local.Delete = function (localKey, execute = false) {
     if (Taiizor.Storage.Local.Check(localKey) || execute) {
         localStorage.removeItem(localKey);
+    }
+}
+
+
+
+Taiizor.Meta.Check = function (metaName) {
+    let metaValue = Taiizor.Meta.Selector(metaName);
+    if (metaValue == null) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+Taiizor.Meta.Content = function (metaName) {
+    let metaValue = Taiizor.Meta.Check(metaName);
+    if (metaValue) {
+        return Taiizor.Meta.Selector(metaName).content;
+    } else {
+        return 'undefined';
+    }
+}
+
+Taiizor.Meta.Selector = function (metaName) {
+    return document.querySelector('meta[name="' + metaName + '"]');
+}
+
+Taiizor.Meta.Author.Set = function (authorName) {
+    if (Taiizor.Meta.Check('author')) {
+        Taiizor.Meta.Selector('author').content = authorName;
+    } else {
+        Taiizor.Add.Head('<meta name="author" content="' + authorName + '">');
+    }
+}
+
+Taiizor.Meta.Author.Remove = function (execute = false) {
+    if (Taiizor.Meta.Check('author') || execute) {
+        Taiizor.Meta.Selector('author').remove();
     }
 }
 
