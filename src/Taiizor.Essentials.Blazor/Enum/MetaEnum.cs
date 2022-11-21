@@ -14,7 +14,7 @@
         OpenGraph,
         Description,
         ContentType,
-        ShortcutIcon,
+        ShortcutIcon
     }
 
     internal enum TwitterMetaEnum
@@ -36,6 +36,6 @@
         Image,
         Locale,
         SiteName,
-        Description,
+        Description
     }
 }

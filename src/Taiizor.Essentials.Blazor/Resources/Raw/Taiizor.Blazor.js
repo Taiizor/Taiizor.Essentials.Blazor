@@ -19,6 +19,42 @@ Taiizor.Meta.Description = {};
 Taiizor.Meta.ContentType = {};
 Taiizor.Meta.ShortcutIcon = {};
 
+Taiizor.Meta.Enum = {
+    Author: "author",
+    Robots: "robots",
+    Charset: "charset",
+    Refresh: "refresh",
+    Twitter: "twitter:",
+    Keywords: "keywords",
+    Viewport: "viewport",
+    Manifest: "manifest",
+    Canonical: "canonical",
+    OpenGraph: "og:",
+    Description: "description",
+    ContentType: "content-type",
+    ShortcutIcon: "shortcut icon"
+};
+
+Taiizor.Meta.Twitter.Enum = {
+    Url: "url",
+    Card: "card",
+    Site: "site",
+    Type: "type",
+    Image: "image",
+    Title: "title",
+    Description: "description"
+};
+
+Taiizor.Meta.OpenGraph.Enum = {
+    Url: "url",
+    Type: "type",
+    Title: "title",
+    Image: "image",
+    Locale: "locale",
+    SiteName: "sitename",
+    Description: "description"
+};
+
 
 Taiizor.Storage = {};
 Taiizor.Storage.Local = {};
@@ -137,6 +173,33 @@ Taiizor.Meta.Check = function (metaName) {
     }
 }
 
+Taiizor.Meta.Check.Link = function (metaName) {
+    let metaValue = Taiizor.Meta.Selector.Link(metaName);
+    if (metaValue == null) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+Taiizor.Meta.Check.Equiv = function (metaName) {
+    let metaValue = Taiizor.Meta.Selector.Equiv(metaName);
+    if (metaValue == null) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+Taiizor.Meta.Check.Advanced = function (metaName) {
+    let metaValue = Taiizor.Meta.Selector.Advanced(metaName);
+    if (metaValue == null) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 Taiizor.Meta.Content = function (metaName) {
     let metaValue = Taiizor.Meta.Check(metaName);
     if (metaValue) {
@@ -146,28 +209,114 @@ Taiizor.Meta.Content = function (metaName) {
     }
 }
 
+Taiizor.Meta.Content.Link = function (metaName) {
+    let metaValue = Taiizor.Meta.Check.Link(metaName);
+    if (metaValue) {
+        return Taiizor.Meta.Selector.Link(metaName).href;
+    } else {
+        return 'undefined';
+    }
+}
+
+Taiizor.Meta.Content.Equiv = function (metaName) {
+    let metaValue = Taiizor.Meta.Check.Equiv(metaName);
+    if (metaValue) {
+        return Taiizor.Meta.Selector.Equiv(metaName).content;
+    } else {
+        return 'undefined';
+    }
+}
+
+Taiizor.Meta.Content.Advanced = function (metaName) {
+    let metaValue = Taiizor.Meta.Check.Advanced(metaName);
+    if (metaValue) {
+        return Taiizor.Meta.Selector.Advanced(metaName).getAttribute(metaName);
+    } else {
+        return 'undefined';
+    }
+}
+
 Taiizor.Meta.Selector = function (metaName) {
     return document.querySelector('meta[name="' + metaName + '"]');
 }
 
+Taiizor.Meta.Selector.Link = function (metaName) {
+    return document.querySelector('link[rel="' + metaName + '"]');
+}
+
+Taiizor.Meta.Selector.Equiv = function (metaName) {
+    return document.querySelector('meta[http-equiv="' + metaName + '"]');
+}
+
+Taiizor.Meta.Selector.Property = function (metaName) {
+    return document.querySelector('meta[property="' + metaName + '"]');
+}
+
+Taiizor.Meta.Selector.Advanced = function (metaName) {
+    return document.querySelector('meta[' + metaName + ']');
+}
+
 Taiizor.Meta.Author.Set = function (authorName) {
-    if (Taiizor.Meta.Check('author')) {
-        Taiizor.Meta.Selector('author').content = authorName;
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Author)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Author).content = authorName;
     } else {
-        Taiizor.Add.Head('<meta name="author" content="' + authorName + '">');
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Enum.Author + '" content="' + authorName + '">');
     }
 }
 
 Taiizor.Meta.Author.Remove = function (execute = false) {
-    if (Taiizor.Meta.Check('author') || execute) {
-        Taiizor.Meta.Selector('author').remove();
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Author) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Author).remove();
+    }
+}
+
+Taiizor.Meta.Canonical.Set = function (uri) {
+    if (Taiizor.Meta.Check.Link(Taiizor.Meta.Enum.Canonical)) {
+        Taiizor.Meta.Selector.Link(Taiizor.Meta.Enum.Canonical).href = uri;
+    } else {
+        Taiizor.Add.Head('<link rel="' + Taiizor.Meta.Enum.Canonical + '" href="' + uri + '">');
+    }
+}
+
+Taiizor.Meta.Canonical.Remove = function (execute = false) {
+    if (Taiizor.Meta.Check.Link(Taiizor.Meta.Enum.Canonical) || execute) {
+        Taiizor.Meta.Selector.Link(Taiizor.Meta.Enum.Canonical).remove();
+    }
+}
+
+Taiizor.Meta.Charset.Set = function (encoding) {
+    if (Taiizor.Meta.Check.Advanced(Taiizor.Meta.Enum.Charset)) {
+        Taiizor.Meta.Selector.Advanced(Taiizor.Meta.Enum.Charset).setAttribute(Taiizor.Meta.Enum.Charset, encoding);
+    } else {
+        Taiizor.Add.Head('<meta ' + Taiizor.Meta.Enum.Charset + '="' + encoding + '">');
+    }
+}
+
+Taiizor.Meta.Charset.Remove = function (execute = false) {
+    if (Taiizor.Meta.Check.Advanced(Taiizor.Meta.Enum.Charset) || execute) {
+        Taiizor.Meta.Selector.Advanced(Taiizor.Meta.Enum.Charset).remove();
+    }
+}
+
+Taiizor.Meta.ContentType.Set = function (content) {
+    if (Taiizor.Meta.Check.Equiv(Taiizor.Meta.Enum.ContentType)) {
+        Taiizor.Meta.Selector.Equiv(Taiizor.Meta.Enum.ContentType).content = content;
+    } else {
+        Taiizor.Add.Head('<meta http-equiv="' + Taiizor.Meta.Enum.ContentType + '" content="' + content + '">');
+    }
+}
+
+Taiizor.Meta.ContentType.Remove = function (execute = false) {
+    if (Taiizor.Meta.Check.Equiv(Taiizor.Meta.Enum.ContentType) || execute) {
+        Taiizor.Meta.Selector.Equiv(Taiizor.Meta.Enum.ContentType).remove();
     }
 }
 
 
 //charset, vs attribute haltýya kontrol edilecek
-//https://ahrefs.com/blog/seo-meta-tags/
+//https://ahrefs.com/blog/seo-meta-tags
 //https://www.w3schools.com/tags/tag_meta.asp
+//https://www.w3schools.com/tags/att_meta_http_equiv.asp
 
 
 
