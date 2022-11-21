@@ -411,12 +411,6 @@ Taiizor.Meta.Viewport.Remove = function (execute = false) {
 }
 
 
-//charset, vs attribute haltýya kontrol edilecek
-//https://ahrefs.com/blog/seo-meta-tags
-//https://www.w3schools.com/tags/tag_meta.asp
-//https://www.w3schools.com/tags/att_meta_http_equiv.asp
-
-
 
 Taiizor.Add.Head = function (tagHtml) {
     document.head.appendChild(document.createRange().createContextualFragment(tagHtml));
