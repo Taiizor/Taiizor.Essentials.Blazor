@@ -10,7 +10,6 @@ Taiizor.Meta.Robots = {};
 Taiizor.Meta.Charset = {};
 Taiizor.Meta.Refresh = {};
 Taiizor.Meta.Twitter = {};
-Taiizor.Meta.Favicon = {};
 Taiizor.Meta.Keywords = {};
 Taiizor.Meta.Viewport = {};
 Taiizor.Meta.Manifest = {};
