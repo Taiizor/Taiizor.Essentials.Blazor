@@ -512,8 +512,102 @@ Taiizor.Meta.ShortcutIcon.Remove = function (execute = false) {
     }
 }
 
-Taiizor.Meta.Twitter = function () {
+Taiizor.Meta.Twitter.SetUrl = function (uri) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Url)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Url).content = uri;
+    } else {
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Url + '" content="' + uri + '">');
+    }
+}
 
+Taiizor.Meta.Twitter.SetCard = function (content) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Card)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Card).content = content;
+    } else {
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Card + '" content="' + content + '">');
+    }
+}
+
+Taiizor.Meta.Twitter.SetSite = function (content) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Site)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Site).content = content;
+    } else {
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Site + '" content="' + content + '">');
+    }
+}
+
+Taiizor.Meta.Twitter.SetType = function (content) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Type)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Type).content = content;
+    } else {
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Type + '" content="' + content + '">');
+    }
+}
+
+Taiizor.Meta.Twitter.SetImage = function (uri) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Image)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Image).content = uri;
+    } else {
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Image + '" content="' + uri + '">');
+    }
+}
+
+Taiizor.Meta.Twitter.SetTitle = function (content) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Title)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Title).content = content;
+    } else {
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Title + '" content="' + content + '">');
+    }
+}
+
+Taiizor.Meta.Twitter.SetDescription = function (content) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Description)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Description).content = content;
+    } else {
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Description + '" content="' + content + '">');
+    }
+}
+
+Taiizor.Meta.Twitter.RemoveUrl = function (execute = false) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Url) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Url).remove();
+    }
+}
+
+Taiizor.Meta.Twitter.RemoveCard = function (execute = false) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Card) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Card).remove();
+    }
+}
+
+Taiizor.Meta.Twitter.RemoveSite = function (execute = false) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Site) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Site).remove();
+    }
+}
+
+Taiizor.Meta.Twitter.RemoveType = function (execute = false) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Type) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Type).remove();
+    }
+}
+
+Taiizor.Meta.Twitter.RemoveImage = function (execute = false) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Image) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Image).remove();
+    }
+}
+
+Taiizor.Meta.Twitter.RemoveTitle = function (execute = false) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Title) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Title).remove();
+    }
+}
+
+Taiizor.Meta.Twitter.RemoveDescription = function (execute = false) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Description) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Enum.Twitter + Taiizor.Meta.Twitter.Enum.Description).remove();
+    }
 }
 
 Taiizor.Meta.Viewport.Set = function (content) {

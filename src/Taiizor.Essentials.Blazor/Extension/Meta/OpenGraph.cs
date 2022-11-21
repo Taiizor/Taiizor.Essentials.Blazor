@@ -9,7 +9,7 @@ namespace Taiizor.Essentials.Blazor.Extension.Meta
         {
             await Interop.Call("Taiizor.Meta.OpenGraph.SetUrl", Uri);
         }
-        
+
         public static async Task SetType(string Content)
         {
             await Interop.Call("Taiizor.Meta.OpenGraph.SetType", Content);
