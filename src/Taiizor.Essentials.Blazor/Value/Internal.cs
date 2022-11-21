@@ -43,7 +43,7 @@ namespace Taiizor.Essentials.Blazor.Value
             { OpenGraphMetaEnum.Title, "title" },
             { OpenGraphMetaEnum.Image, "image" },
             { OpenGraphMetaEnum.Locale, "locale" },
-            { OpenGraphMetaEnum.SiteName, "sitename" },
+            { OpenGraphMetaEnum.Sitename, "sitename" },
             { OpenGraphMetaEnum.Description, "description" }
         };
 

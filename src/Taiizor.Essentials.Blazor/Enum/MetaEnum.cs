@@ -35,7 +35,7 @@
         Title,
         Image,
         Locale,
-        SiteName,
+        Sitename,
         Description
     }
 }

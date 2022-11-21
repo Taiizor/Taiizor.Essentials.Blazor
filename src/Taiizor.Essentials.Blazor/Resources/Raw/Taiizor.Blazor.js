@@ -51,7 +51,7 @@ Taiizor.Meta.OpenGraph.Enum = {
     Title: "title",
     Image: "image",
     Locale: "locale",
-    SiteName: "sitename",
+    Sitename: "sitename",
     Description: "description"
 };
 
@@ -191,6 +191,15 @@ Taiizor.Meta.Check.Equiv = function (metaName) {
     }
 }
 
+Taiizor.Meta.Check.Property = function (metaName) {
+    let metaValue = Taiizor.Meta.Selector.Property(metaName);
+    if (metaValue == null) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 Taiizor.Meta.Check.Advanced = function (metaName) {
     let metaValue = Taiizor.Meta.Selector.Advanced(metaName);
     if (metaValue == null) {
@@ -222,6 +231,15 @@ Taiizor.Meta.Content.Equiv = function (metaName) {
     let metaValue = Taiizor.Meta.Check.Equiv(metaName);
     if (metaValue) {
         return Taiizor.Meta.Selector.Equiv(metaName).content;
+    } else {
+        return 'undefined';
+    }
+}
+
+Taiizor.Meta.Content.Property = function (metaName) {
+    let metaValue = Taiizor.Meta.Check.Property(metaName);
+    if (metaValue) {
+        return Taiizor.Meta.Selector.Property(metaName).content;
     } else {
         return 'undefined';
     }
@@ -354,6 +372,104 @@ Taiizor.Meta.Manifest.Remove = function (execute = false) {
     }
 }
 
+Taiizor.Meta.OpenGraph.SetUrl = function (uri) {
+    if (Taiizor.Meta.Check.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Url)) {
+        Taiizor.Meta.Selector.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Url).content = uri;
+    } else {
+        Taiizor.Add.Head('<meta property="' + Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Url + '" content="' + uri + '">');
+    }
+}
+
+Taiizor.Meta.OpenGraph.SetType = function (content) {
+    if (Taiizor.Meta.Check.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Type)) {
+        Taiizor.Meta.Selector.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Type).content = content;
+    } else {
+        Taiizor.Add.Head('<meta property="' + Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Type + '" content="' + content + '">');
+    }
+}
+
+Taiizor.Meta.OpenGraph.SetTitle = function (content) {
+    if (Taiizor.Meta.Check.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Title)) {
+        Taiizor.Meta.Selector.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Title).content = content;
+    } else {
+        Taiizor.Add.Head('<meta property="' + Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Title + '" content="' + content + '">');
+    }
+}
+
+Taiizor.Meta.OpenGraph.SetImage = function (uri) {
+    if (Taiizor.Meta.Check.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Image)) {
+        Taiizor.Meta.Selector.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Image).content = uri;
+    } else {
+        Taiizor.Add.Head('<meta property="' + Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Image + '" content="' + uri + '">');
+    }
+}
+
+Taiizor.Meta.OpenGraph.SetLocale = function (content) {
+    if (Taiizor.Meta.Check.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Locale)) {
+        Taiizor.Meta.Selector.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Locale).content = content;
+    } else {
+        Taiizor.Add.Head('<meta property="' + Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Locale + '" content="' + content + '">');
+    }
+}
+
+Taiizor.Meta.OpenGraph.SetSitename = function (content) {
+    if (Taiizor.Meta.Check.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Sitename)) {
+        Taiizor.Meta.Selector.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Sitename).content = content;
+    } else {
+        Taiizor.Add.Head('<meta property="' + Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Sitename + '" content="' + content + '">');
+    }
+}
+
+Taiizor.Meta.OpenGraph.SetDescription = function (content) {
+    if (Taiizor.Meta.Check.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Description)) {
+        Taiizor.Meta.Selector.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Description).content = content;
+    } else {
+        Taiizor.Add.Head('<meta property="' + Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Description + '" content="' + content + '">');
+    }
+}
+
+Taiizor.Meta.OpenGraph.RemoveUrl = function (execute = false) {
+    if (Taiizor.Meta.Check.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Url) || execute) {
+        Taiizor.Meta.Selector.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Url).remove();
+    }
+}
+
+Taiizor.Meta.OpenGraph.RemoveType = function (execute = false) {
+    if (Taiizor.Meta.Check.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Type) || execute) {
+        Taiizor.Meta.Selector.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Type).remove();
+    }
+}
+
+Taiizor.Meta.OpenGraph.RemoveTitle = function (execute = false) {
+    if (Taiizor.Meta.Check.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Title) || execute) {
+        Taiizor.Meta.Selector.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Title).remove();
+    }
+}
+
+Taiizor.Meta.OpenGraph.RemoveImage = function (execute = false) {
+    if (Taiizor.Meta.Check.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Image) || execute) {
+        Taiizor.Meta.Selector.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Image).remove();
+    }
+}
+
+Taiizor.Meta.OpenGraph.RemoveLocale = function (execute = false) {
+    if (Taiizor.Meta.Check.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Locale) || execute) {
+        Taiizor.Meta.Selector.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Locale).remove();
+    }
+}
+
+Taiizor.Meta.OpenGraph.RemoveSitename = function (execute = false) {
+    if (Taiizor.Meta.Check.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Sitename) || execute) {
+        Taiizor.Meta.Selector.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Sitename).remove();
+    }
+}
+
+Taiizor.Meta.OpenGraph.RemoveDescription = function (execute = false) {
+    if (Taiizor.Meta.Check.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Description) || execute) {
+        Taiizor.Meta.Selector.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Description).remove();
+    }
+}
+
 Taiizor.Meta.Refresh.Set = function (content) {
     if (Taiizor.Meta.Check.Equiv(Taiizor.Meta.Enum.Refresh)) {
         Taiizor.Meta.Selector.Equiv(Taiizor.Meta.Enum.Refresh).content = content;
@@ -394,6 +510,10 @@ Taiizor.Meta.ShortcutIcon.Remove = function (execute = false) {
     if (Taiizor.Meta.Check.Link(Taiizor.Meta.Enum.ShortcutIcon) || execute) {
         Taiizor.Meta.Selector.Link(Taiizor.Meta.Enum.ShortcutIcon).remove();
     }
+}
+
+Taiizor.Meta.Twitter = function () {
+
 }
 
 Taiizor.Meta.Viewport.Set = function (content) {
