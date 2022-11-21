@@ -165,7 +165,7 @@ Taiizor.Meta.Author.Remove = function (execute = false) {
 }
 
 
-//
+//charset, vs attribute haltýya kontrol edilecek
 //https://ahrefs.com/blog/seo-meta-tags/
 //https://www.w3schools.com/tags/tag_meta.asp
 
