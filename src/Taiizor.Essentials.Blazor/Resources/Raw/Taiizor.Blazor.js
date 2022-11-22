@@ -51,7 +51,7 @@ Taiizor.Meta.OpenGraph.Enum = {
     Title: "title",
     Image: "image",
     Locale: "locale",
-    Sitename: "sitename",
+    Sitename: "site_name",
     Description: "description"
 };
 
