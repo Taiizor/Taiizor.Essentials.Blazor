@@ -10,6 +10,7 @@ namespace Taiizor.Essentials.Blazor.Value
 
         public static Dictionary<MetaEnum, string> MetaNames = new()
         {
+            { MetaEnum.Other, "color" },
             { MetaEnum.Author, "author" },
             { MetaEnum.Robots, "robots" },
             { MetaEnum.Charset, "charset" },
@@ -23,6 +24,17 @@ namespace Taiizor.Essentials.Blazor.Value
             { MetaEnum.Description, "description" },
             { MetaEnum.ContentType, "content-type" },
             { MetaEnum.ShortcutIcon, "shortcut icon" }
+        };
+
+        public static Dictionary<OtherMetaEnum, string> OtherMetaNames = new()
+        {
+            { OtherMetaEnum.ThemeColor, "theme-color" },
+            { OtherMetaEnum.ColorScheme, "color-scheme" },
+            { OtherMetaEnum.MsApplicationTileColor, "msapplication-TileColor" },
+            { OtherMetaEnum.MsApplicationTileImage, "msapplication-TileImage" },
+            { OtherMetaEnum.AppleMobileWebAppCapable, "apple-mobile-web-app-capable" },
+            { OtherMetaEnum.MsApplicationNavButtonColor, "msapplication-navbutton-color" },
+            { OtherMetaEnum.AppleMobileWebAppStatusBarStyle, "apple-mobile-web-app-status-bar-style" }
         };
 
         public static Dictionary<TwitterMetaEnum, string> TwitterMetaNames = new()

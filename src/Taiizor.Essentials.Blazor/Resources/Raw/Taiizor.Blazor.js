@@ -20,6 +20,7 @@ Taiizor.Meta.ContentType = {};
 Taiizor.Meta.ShortcutIcon = {};
 
 Taiizor.Meta.Enum = {
+    Other: "",
     Author: "author",
     Robots: "robots",
     Charset: "charset",
@@ -33,6 +34,16 @@ Taiizor.Meta.Enum = {
     Description: "description",
     ContentType: "content-type",
     ShortcutIcon: "shortcut icon"
+};
+
+Taiizor.Meta.Other.Enum = {
+    ThemeColor: "theme-color",
+    ColorScheme: "color-scheme",
+    MsApplicationTileColor: "msapplication-TileColor",
+    MsApplicationTileImage: "msapplication-TileImage",
+    AppleMobileWebAppCapable: "apple-mobile-web-app-capable",
+    MsApplicationNavButtonColor: "msapplication-navbutton-color",
+    AppleMobileWebAppStatusBarStyle: "apple-mobile-web-app-status-bar-style"
 };
 
 Taiizor.Meta.Twitter.Enum = {
@@ -467,6 +478,104 @@ Taiizor.Meta.OpenGraph.RemoveSitename = function (execute = false) {
 Taiizor.Meta.OpenGraph.RemoveDescription = function (execute = false) {
     if (Taiizor.Meta.Check.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Description) || execute) {
         Taiizor.Meta.Selector.Property(Taiizor.Meta.Enum.OpenGraph + Taiizor.Meta.OpenGraph.Enum.Description).remove();
+    }
+}
+
+Taiizor.Meta.Other.SetThemeColor = function (hex) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Other.Enum.ThemeColor)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Other.Enum.ThemeColor).content = hex;
+    } else {
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Other.Enum.ThemeColor + '" content="' + hex + '">');
+    }
+}
+
+Taiizor.Meta.Other.SetColorScheme = function (theme) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Other.Enum.ColorScheme)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Other.Enum.ColorScheme).content = theme;
+    } else {
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Other.Enum.ColorScheme + '" content="' + theme + '">');
+    }
+}
+
+Taiizor.Meta.Other.SetMsApplicationTileColor = function (hex) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Other.Enum.MsApplicationTileColor)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Other.Enum.MsApplicationTileColor).content = hex;
+    } else {
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Other.Enum.MsApplicationTileColor + '" content="' + hex + '">');
+    }
+}
+
+Taiizor.Meta.Other.SetMsApplicationTileImage = function (uri) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Other.Enum.MsApplicationTileImage)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Other.Enum.MsApplicationTileImage).content = uri;
+    } else {
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Other.Enum.MsApplicationTileImage + '" content="' + uri + '">');
+    }
+}
+
+Taiizor.Meta.Other.SetMsApplicationNavButtonColor = function (hex) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Other.Enum.MsApplicationNavButtonColor)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Other.Enum.MsApplicationNavButtonColor).content = hex;
+    } else {
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Other.Enum.MsApplicationNavButtonColor + '" content="' + hex + '">');
+    }
+}
+
+Taiizor.Meta.Other.SetAppleMobileWebAppCapable = function (value) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Other.Enum.AppleMobileWebAppCapable)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Other.Enum.AppleMobileWebAppCapable).content = value;
+    } else {
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Other.Enum.AppleMobileWebAppCapable + '" content="' + value + '">');
+    }
+}
+
+Taiizor.Meta.Other.SetAppleMobileWebAppStatusBarStyle = function (value) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Other.Enum.AppleMobileWebAppStatusBarStyle)) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Other.Enum.AppleMobileWebAppStatusBarStyle).content = value;
+    } else {
+        Taiizor.Add.Head('<meta name="' + Taiizor.Meta.Other.Enum.AppleMobileWebAppStatusBarStyle + '" content="' + value + '">');
+    }
+}
+
+Taiizor.Meta.Other.RemoveThemeColor = function (execute = false) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Other.Enum.ThemeColor) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Other.Enum.ThemeColor).remove();
+    }
+}
+
+Taiizor.Meta.Other.RemoveColorScheme = function (execute = false) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Other.Enum.ColorScheme) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Other.Enum.ColorScheme).remove();
+    }
+}
+
+Taiizor.Meta.Other.RemoveMsApplicationTileColor = function (execute = false) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Other.Enum.MsApplicationTileColor) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Other.Enum.MsApplicationTileColor).remove();
+    }
+}
+
+Taiizor.Meta.Other.RemoveMsApplicationTileImage = function (execute = false) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Other.Enum.MsApplicationTileImage) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Other.Enum.MsApplicationTileImage).remove();
+    }
+}
+
+Taiizor.Meta.Other.RemoveMsApplicationNavButtonColor = function (execute = false) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Other.Enum.MsApplicationNavButtonColor) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Other.Enum.MsApplicationNavButtonColor).remove();
+    }
+}
+
+Taiizor.Meta.Other.RemoveAppleMobileWebAppCapable = function (execute = false) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Other.Enum.AppleMobileWebAppCapable) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Other.Enum.AppleMobileWebAppCapable).remove();
+    }
+}
+
+Taiizor.Meta.Other.RemoveAppleMobileWebAppStatusBarStyle = function (execute = false) {
+    if (Taiizor.Meta.Check(Taiizor.Meta.Other.Enum.AppleMobileWebAppStatusBarStyle) || execute) {
+        Taiizor.Meta.Selector(Taiizor.Meta.Other.Enum.AppleMobileWebAppStatusBarStyle).remove();
     }
 }
 

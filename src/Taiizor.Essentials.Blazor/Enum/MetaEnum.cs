@@ -2,6 +2,7 @@
 {
     internal enum MetaEnum
     {
+        Other,
         Author,
         Robots,
         Charset,
@@ -15,6 +16,17 @@
         Description,
         ContentType,
         ShortcutIcon
+    }
+
+    internal enum OtherMetaEnum
+    {
+        ThemeColor,
+        ColorScheme,
+        MsApplicationTileColor,
+        MsApplicationTileImage,
+        AppleMobileWebAppCapable,
+        MsApplicationNavButtonColor,
+        AppleMobileWebAppStatusBarStyle
     }
 
     internal enum TwitterMetaEnum
