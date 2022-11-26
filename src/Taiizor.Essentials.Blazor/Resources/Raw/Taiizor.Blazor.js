@@ -5,6 +5,7 @@ var Taiizor = {};
 
 
 Taiizor.Meta = {};
+Taiizor.Meta.Other = {};
 Taiizor.Meta.Author = {};
 Taiizor.Meta.Robots = {};
 Taiizor.Meta.Charset = {};
