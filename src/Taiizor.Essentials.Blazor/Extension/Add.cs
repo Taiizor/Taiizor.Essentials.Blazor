@@ -21,5 +21,15 @@
         {
             await Interop.Call("Taiizor.Add.Script.Body", Node);
         }
+
+        public static async Task Element(string Identify, string Tag)
+        {
+            await Interop.Call("Taiizor.Add.Element", Identify, Tag);
+        }
+
+        public static async Task ElementScript(string Identify, string Node)
+        {
+            await Interop.Call("Taiizor.Add.Script.Element", Identify, Node);
+        }
     }
 }

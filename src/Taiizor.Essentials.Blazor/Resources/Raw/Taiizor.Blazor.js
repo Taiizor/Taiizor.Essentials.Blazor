@@ -744,6 +744,10 @@ Taiizor.Add.Body = function (tagHtml) {
     document.body.appendChild(document.createRange().createContextualFragment(tagHtml));
 }
 
+Taiizor.Add.Element = function (elementId, tagHtml) {
+    document.getElementById(elementId).appendChild(document.createRange().createContextualFragment(tagHtml));
+}
+
 Taiizor.Add.Script.Head = function (textNode) {
     var element = document.createElement('script');
     element.setAttribute('type', 'text/javascript');
@@ -758,6 +762,14 @@ Taiizor.Add.Script.Body = function (textNode) {
 
     element.appendChild(document.createTextNode(textNode));
     document.body.appendChild(element);
+}
+
+Taiizor.Add.Script.Element = function (elementId, textNode) {
+    var element = document.createElement('script');
+    element.setAttribute('type', 'text/javascript');
+
+    element.appendChild(document.createTextNode(textNode));
+    document.getElementById(elementId).appendChild(element);
 }
 
 
@@ -875,6 +887,12 @@ Taiizor.Include.Js = function (path) {
     var customScript = document.createElement('script');
     customScript.setAttribute('src', path);
     document.body.appendChild(customScript);
+}
+
+Taiizor.Include.Js.Element = function (elementId, path) {
+    var customScript = document.createElement('script');
+    customScript.setAttribute('src', path);
+    document.getElementById(elementId).appendChild(customScript);
 }
 
 Taiizor.Include.Css = function (path, rel, type) {

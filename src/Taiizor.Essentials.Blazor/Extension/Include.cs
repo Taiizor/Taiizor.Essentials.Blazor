@@ -38,6 +38,19 @@
             }
         }
 
+        public static async Task ScriptElement(string Identify, string Path)
+        {
+            await Interop.Call("Taiizor.Include.Js.Element", Identify, Path);
+        }
+
+        public static async Task ScriptElementProtected(string Identify, string Path, string Pathname)
+        {
+            if (await Location.GetPathname() == Pathname)
+            {
+                await ScriptElement(Identify, Path);
+            }
+        }
+
         public static async Task Stylesheet(string Path)
         {
             await Stylesheet(Path, "stylesheet");
