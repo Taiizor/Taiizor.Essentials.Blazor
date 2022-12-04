@@ -24,6 +24,28 @@
                 await Font(Path, Rel);
             }
         }
+        public static async Task FontElement(string Identify, string Path)
+        {
+            await FontElement(Identify, Path, "stylesheet");
+        }
+
+        public static async Task FontElementProtected(string Identify, string Path, string Pathname)
+        {
+            await FontElementProtected(Identify, Path, "stylesheet", Pathname);
+        }
+
+        public static async Task FontElement(string Identify, string Path, string Rel)
+        {
+            await Interop.Call("Taiizor.Include.Font.Element", Identify, Path, Rel);
+        }
+
+        public static async Task FontElementProtected(string Identify, string Path, string Rel, string Pathname)
+        {
+            if (await Location.GetPathname() == Pathname)
+            {
+                await FontElement(Identify, Path, Rel);
+            }
+        }
 
         public static async Task Script(string Path)
         {
@@ -81,6 +103,39 @@
             if (await Location.GetPathname() == Pathname)
             {
                 await Stylesheet(Path, Rel, Type);
+            }
+        }
+
+        public static async Task StylesheetElement(string Identify, string Path)
+        {
+            await StylesheetElement(Identify, Path, "stylesheet");
+        }
+
+        public static async Task StylesheetElementProtected(string Identify, string Path, string Pathname)
+        {
+            await StylesheetElementProtected(Identify, Path, "stylesheet", Pathname);
+        }
+
+        public static async Task StylesheetElement(string Identify, string Path, string Rel)
+        {
+            await StylesheetElement(Identify, Path, Rel, "text/css");
+        }
+
+        public static async Task StylesheetElementProtected(string Identify, string Path, string Rel, string Pathname)
+        {
+            await StylesheetElementProtected(Identify, Path, Rel, "text/css", Pathname);
+        }
+
+        public static async Task StylesheetElement(string Identify, string Path, string Rel, string Type)
+        {
+            await Interop.Call("Taiizor.Include.Css.Element", Identify, Path, Rel, Type);
+        }
+
+        public static async Task StylesheetElementProtected(string Identify, string Path, string Rel, string Type, string Pathname)
+        {
+            if (await Location.GetPathname() == Pathname)
+            {
+                await StylesheetElement(Identify, Path, Rel, Type);
             }
         }
     }

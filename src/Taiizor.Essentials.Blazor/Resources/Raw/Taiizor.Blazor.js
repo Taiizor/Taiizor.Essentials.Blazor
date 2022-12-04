@@ -883,6 +883,13 @@ Taiizor.Include.Font = function (path, rel) {
     document.head.appendChild(customFont);
 }
 
+Taiizor.Include.Font.Element = function (elementId, path, rel) {
+    var customFont = document.createElement('link');
+    customFont.setAttribute('href', path);
+    customFont.setAttribute('rel', rel);
+    document.getElementById(elementId).appendChild(customFont);
+}
+
 Taiizor.Include.Js = function (path) {
     var customScript = document.createElement('script');
     customScript.setAttribute('src', path);
@@ -901,6 +908,14 @@ Taiizor.Include.Css = function (path, rel, type) {
     customStylesheet.setAttribute('rel', rel);
     customStylesheet.setAttribute('type', type);
     document.head.appendChild(customStylesheet);
+}
+
+Taiizor.Include.Css.Element = function (elementId, path, rel, type) {
+    var customStylesheet = document.createElement('link');
+    customStylesheet.setAttribute('href', path);
+    customStylesheet.setAttribute('rel', rel);
+    customStylesheet.setAttribute('type', type);
+    document.getElementById(elementId).appendChild(customStylesheet);
 }
 
 
