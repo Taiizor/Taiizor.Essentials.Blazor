@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
     <PropertyGroup>
-        <TargetFrameworks>net5.0;net6.0;net7.0</TargetFrameworks>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <AnalysisLevel>preview</AnalysisLevel>
@@ -57,11 +57,10 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Blazor/rel
     </PropertyGroup>
 
     <ItemGroup>
-        <EmbeddedResource Include="Resources\Raw\None.Blazor.js" />
-        <EmbeddedResource Include="Resources\Raw\Custom.Blazor.js" />
-        <EmbeddedResource Include="Resources\Raw\Taiizor.Blazor.js" />
-        <EmbeddedResource Include="Resources\Raw\AppCenter.Blazor.js" />
-        <EmbeddedResource Include="Resources\Raw\Conforyon.Blazor.js" />
+        <EmbeddedResource Include="wwwroot\Custom.Blazor.js" />
+        <EmbeddedResource Include="wwwroot\Taiizor.Blazor.js" />
+        <EmbeddedResource Include="wwwroot\AppCenter.Blazor.js" />
+        <EmbeddedResource Include="wwwroot\Conforyon.Blazor.js" />
     </ItemGroup>
     
     <ItemGroup>
@@ -90,7 +89,6 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Blazor/rel
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Condition="'$(TargetFramework)' == 'net5.0'" Include="Microsoft.JSInterop" Version="5.0.17" />
         <PackageReference Condition="'$(TargetFramework)' == 'net6.0'" Include="Microsoft.JSInterop" Version="6.0.11" />
         <PackageReference Condition="'$(TargetFramework)' == 'net7.0'" Include="Microsoft.JSInterop" Version="7.0.0" />
     </ItemGroup>

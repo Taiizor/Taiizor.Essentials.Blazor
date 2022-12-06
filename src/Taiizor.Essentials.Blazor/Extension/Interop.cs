@@ -11,12 +11,24 @@ namespace Taiizor.Essentials.Blazor.Extension
 
         public Interop(IJSRuntime JSR)
         {
-            _ = new Interop(JSR, Internal.JavascriptFiles, Internal.IncldueExecute);
+            HI.CheckRuntime(JSR);
+
+            JS = JSR;
         }
 
         public Interop(IJSRuntime JSR, Dictionary<JavascriptEnum, bool> Files)
         {
-            _ = new Interop(JSR, Files, Internal.IncldueExecute);
+            HI.CheckRuntime(JSR);
+
+            JS = JSR;
+
+            foreach (KeyValuePair<JavascriptEnum, bool> File in Internal.JavascriptFiles)
+            {
+                if (!Files.ContainsKey(File.Key) || Files[File.Key])
+                {
+                    _ = Call("eval", Javascript.File(File.Key));
+                }
+            }
         }
 
         public Interop(IJSRuntime JSR, Dictionary<JavascriptEnum, bool> Files, bool Execute)

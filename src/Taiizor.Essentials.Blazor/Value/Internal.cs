@@ -8,7 +8,7 @@ namespace Taiizor.Essentials.Blazor.Value
 
         public static readonly string DefaultCulture = "en-GB";
 
-        public static readonly string JavascriptFile = "Taiizor.Essentials.Blazor.Resources.Raw.{0}.Blazor.js";
+        public static readonly string JavascriptFile = "Taiizor.Essentials.Blazor.wwwroot.{0}.Blazor.js";
 
         public static Dictionary<MetaEnum, string> MetaNames = new()
         {
@@ -68,7 +68,7 @@ namespace Taiizor.Essentials.Blazor.Value
             { JavascriptEnum.AppCenter, true },
             { JavascriptEnum.Conforyon, true }
         };
-        
+
         public static Dictionary<JavascriptEnum, bool> IncludeJavascript = new()
         {
             { JavascriptEnum.Custom, true },
