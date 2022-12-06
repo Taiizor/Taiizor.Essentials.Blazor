@@ -57,6 +57,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Blazor/rel
     </PropertyGroup>
 
     <ItemGroup>
+        <EmbeddedResource Include="wwwroot\None.Blazor.js" />
         <EmbeddedResource Include="wwwroot\Custom.Blazor.js" />
         <EmbeddedResource Include="wwwroot\Taiizor.Blazor.js" />
         <EmbeddedResource Include="wwwroot\AppCenter.Blazor.js" />
