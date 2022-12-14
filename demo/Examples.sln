@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Taiizor.Essentials.Blazor.C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Usage", "Usage", "{434C6207-BB8D-49B8-AED3-470636AD9172}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Initialize", "Taiizor.Essentials.Maui.Conforyon\Usage\Initialize\Initialize.csproj", "{3CF61D04-953D-4FDA-B464-F4F10E6588B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Initialize", "Taiizor.Essentials.Blazor.Conforyon\Usage\Initialize\Initialize.csproj", "{3CF61D04-953D-4FDA-B464-F4F10E6588B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
