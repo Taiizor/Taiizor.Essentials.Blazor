@@ -86,7 +86,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Blazor/rel
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
-        <PackageReference Include="Microsoft.JSInterop" Version="6.0.14" />
+        <PackageReference Include="Microsoft.JSInterop" Version="7.0.3" />
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
