@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
@@ -86,9 +86,9 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Essentials.Blazor/rel
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Condition="'$(TargetFramework)' == 'net6.0'" Include="Microsoft.JSInterop" Version="6.0.22" />
-        <PackageReference Condition="'$(TargetFramework)' == 'net7.0'" Include="Microsoft.JSInterop" Version="7.0.11" />
-        <PackageReference Condition="'$(TargetFramework)' == 'net8.0'" Include="Microsoft.JSInterop" Version="8.0.0-rc.1.23421.29" />
+        <PackageReference Condition="'$(TargetFramework)' == 'net6.0'" Include="Microsoft.JSInterop" Version="8.0.0-rc.2.23480.2" />
+        <PackageReference Condition="'$(TargetFramework)' == 'net7.0'" Include="Microsoft.JSInterop" Version="8.0.0-rc.2.23480.2" />
+        <PackageReference Condition="'$(TargetFramework)' == 'net8.0'" Include="Microsoft.JSInterop" Version="8.0.0-rc.2.23480.2" />
     </ItemGroup>
 
 </Project>
